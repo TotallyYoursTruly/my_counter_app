@@ -1,13 +1,13 @@
-actor {
+actor Counter {
 
-  var counter : Nat = 0;
+  stable var value = 0;
 
   public func inc() : async Nat {
-    counter += 1;
-    return counter;
+    value -= 1;
+    return value;
   };
 
-  public query func getCount() : async Nat {
+ /* public query func getCount() : async Nat {
     return counter;
   };
 
@@ -15,4 +15,5 @@ actor {
     counter := 0;
     return counter;
   };
+  */
 };
